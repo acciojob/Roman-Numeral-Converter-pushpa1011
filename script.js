@@ -11,9 +11,25 @@ function convertToRoman(num) {
 	
 
   //your code here
-	let result = "";
+	const values = [
+    obj[0],
+    obj[1],
+    ["CM", 900],
+    obj[2],
+    ["CD", 400],
+    obj[3],
+    ["XC", 90],
+    obj[4],
+    ["XL", 40],
+    obj[5],
+    ["IX", 9],
+    obj[6],
+    ["IV", 4]
+  ];
 
-  for (let [symbol, value] of romanMap) {
+  let result = "";
+
+  for (let [symbol, value] of values) {
     while (num >= value) {
       result += symbol;
       num -= value;
@@ -22,7 +38,7 @@ function convertToRoman(num) {
 
   return result;
 }
-
+	
 // Example usage
 const input = parseInt(prompt("Enter a number"));
 alert(convertToRoman(input));
